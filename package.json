@@ -5,14 +5,16 @@
   "author": "JaeWang Lee",
   "license": "MIT",
   "scripts": {
-    "start": "node ./dist/index.js",
+    "start": "node ./dist/src/index.js",
     "dev": "nodemon ./src/index.ts",
     "prebuild": "rimraf dist",
-    "build": "tsc",
+    "build": "tsc && node resolve-module-alias.js",
     "lint": "eslint \"{src,apps,libs,test}/**/*.ts\" --fix",
     "format": "prettier --write \"src/**/*.ts\" \"test/**/*.ts\""
   },
   "dependencies": {
+    "axios": "^0.21.1",
+    "dayjs": "^1.10.4",
     "fast-json-stringify": "^2.6.0",
     "fastify": "^3.15.0",
     "fastify-cors": "^5.2.0",
@@ -20,7 +22,8 @@
     "fastify-plugin": "^3.0.0",
     "fastify-rate-limit": "^5.5.0",
     "reflect-metadata": "^0.1.13",
-    "rimraf": "^3.0.2"
+    "rimraf": "^3.0.2",
+    "xml-js": "^1.6.11"
   },
   "devDependencies": {
     "@types/node": "^14.14.41",
