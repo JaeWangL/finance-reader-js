@@ -1,4 +1,4 @@
-export enum ExchangeSymbolType {
+export enum MarketType {
   KRX = 0,
   KRX_DELISTING = 1,
   NASDAQ = 2,
