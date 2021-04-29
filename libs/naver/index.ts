@@ -3,9 +3,9 @@ import dayjs from 'dayjs';
 import parser from 'xml-js';
 import { NaverDailyData, NaverDailyResult } from './types';
 
-export const readDailyDataAsync = async (itemCode: string): Promise<NaverDailyResult[]> => {
+export const readDailyDataAsync = async (symbolCode: string): Promise<NaverDailyResult[]> => {
   const res = await axios.get(
-    `https://fchart.stock.naver.com/sise.nhn?timeframe=day&count=6000&requestType=0&symbol=${itemCode}`,
+    `https://fchart.stock.naver.com/sise.nhn?timeframe=day&count=6000&requestType=0&symbol=${symbolCode}`,
     {
       responseType: 'document',
       headers: {

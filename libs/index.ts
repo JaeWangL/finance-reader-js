@@ -1,4 +1,4 @@
-import { ExchangeSymbolType } from './enums';
+import { MarketType } from './enums';
 import { getKrxListAsync } from './krx';
 import { readDailyDataAsync } from './naver';
 
@@ -13,13 +13,13 @@ export const listingStocksAsync = async (): Promise<string> => {
 };
 
 export const readDataAsync = async (
-  itemCode: string,
+  symbolCode: string,
   startDate: Date = new Date(1970, 1, 1),
   endDate: Date = new Date(),
-  exchange: ExchangeSymbolType = ExchangeSymbolType.KRX,
+  market: MarketType = MarketType.KRX,
 ): Promise<string> => {
   try {
-    const res = await readDailyDataAsync(itemCode);
+    const res = await readDailyDataAsync(symbolCode);
 
     return JSON.stringify(res);
   } catch (e) {
