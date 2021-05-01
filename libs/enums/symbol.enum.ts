@@ -4,9 +4,9 @@ export enum MarketType {
   NASDAQ = 2,
   NYSE = 3,
   AMEX = 4,
-  SSE = 5, // Shanghai
-  SZSE = 6, // Shenzhen
-  HKEX = 7, // Hong Kong
-  TSE = 8, // Tokyo
-  HOSE = 9, // [Ho Chi Minh]
+  SHANGHAI = 5,
+  SHENZHEN = 6,
+  HONG_KONG = 7,
+  TOKYO = 8,
+  HOCHIMINH = 9,
 }

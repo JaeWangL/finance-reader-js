@@ -1,10 +1,10 @@
 import { MarketType } from './enums';
 import { getKrxListAsync } from './krx';
-import { readDailyDataAsync } from './naver';
+import { getNaverListAsync, readDailyDataAsync } from './naver';
 
 export const listingStocksAsync = async (): Promise<string> => {
   try {
-    const res = await getKrxListAsync();
+    const res = await getNaverListAsync(MarketType.NASDAQ);
 
     return res;
   } catch (e) {

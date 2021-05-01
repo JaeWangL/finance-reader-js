@@ -3,6 +3,7 @@ import iconv from 'iconv-lite';
 import { Tabletojson } from 'tabletojson';
 
 export const getKrxListAsync = async (): Promise<string> => {
+  // KRX Listed company
   const res = await Axios.get('http://kind.krx.co.kr/corpgeneral/corpList.do?method=download&searchType=13', {
     responseType: 'arraybuffer',
   });
