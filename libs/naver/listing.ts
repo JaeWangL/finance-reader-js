@@ -1,5 +1,6 @@
 import Axios from 'axios';
 import { MarketType } from '../enums';
+import { NaverListingData } from './types';
 
 export const getNaverListAsync = async (market: MarketType): Promise<string> => {
   /*
@@ -11,10 +12,9 @@ export const getNaverListAsync = async (market: MarketType): Promise<string> => 
     });
   }
   */
-  console.log(MarketType[market]);
-  // NASDAQ
+
   try {
-    const res = await Axios.get(
+    const res = await Axios.get<NaverListingData>(
       `http://api.stock.naver.com/stock/exchange/${MarketType[market]}/marketValue?page=1&pageSize=60`,
       {
         headers: {
@@ -23,7 +23,7 @@ export const getNaverListAsync = async (market: MarketType): Promise<string> => 
       },
     );
 
-    return res.data;
+    return res.data.totalCount.toString();
   } catch (e) {
     console.log(e.toString());
   }
