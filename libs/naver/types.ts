@@ -92,3 +92,27 @@ export interface NaverListingData {
   totalCount: number;
   stocks: NaverListingStock[];
 }
+
+export interface NaverEtfItem {
+  itemcode: string;
+  etfTabCode: number;
+  itemname: string;
+  nowVal: number;
+  risefall: string;
+  changeVal: number;
+  changeRate: number;
+  nav: number;
+  threeMonthEarnRate: number;
+  uant: number;
+  amonut: number;
+  marketSum: number;
+}
+
+export interface NaverEtfResult {
+  etfItemList: NaverEtfItem[];
+}
+
+export interface NaverEtfData {
+  resultCode: string;
+  result: NaverEtfResult;
+}

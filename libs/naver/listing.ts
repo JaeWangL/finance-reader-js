@@ -1,6 +1,6 @@
 import Axios from 'axios';
 import { MarketType } from '../enums';
-import { NaverListingData } from './types';
+import { NaverEtfData, NaverListingData } from './types';
 
 export const getNaverListAsync = async (market: MarketType): Promise<string> => {
   /*
@@ -24,6 +24,18 @@ export const getNaverListAsync = async (market: MarketType): Promise<string> => 
     );
 
     return res.data.totalCount.toString();
+  } catch (e) {
+    console.log(e.toString());
+  }
+
+  return 'Error';
+};
+
+export const getNaverEtfListAsync = async (): Promise<string> => {
+  try {
+    const res = await Axios.get<NaverEtfData>('https://finance.naver.com/api/sise/etfItemList.nhn');
+
+    return res.data.resultCode;
   } catch (e) {
     console.log(e.toString());
   }
