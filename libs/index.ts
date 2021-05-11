@@ -1,11 +1,11 @@
 import { MarketType } from './enums';
-import { getKrxListAsync } from './krx';
+import { getInvestingListAsync, InvestingCountryType } from './investing';
 import { getNaverListAsync, readDailyDataAsync } from './naver';
 import { getWikipediaListAsync } from './wikipedia';
 
 export const listingStocksAsync = async (): Promise<string> => {
   try {
-    const res = await getWikipediaListAsync();
+    const res = await getInvestingListAsync(InvestingCountryType.US);
 
     return res;
   } catch (e) {

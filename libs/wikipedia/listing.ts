@@ -9,6 +9,7 @@ export const getWikipediaListAsync = async (): Promise<string> => {
 
   const tablesAsJson = Tabletojson.convert(res.data);
 
+  // NOTE: There are 2 tables in uppon url
   // tablesAsJson[0] = S&P 500 component stocks
   // tablesAsJson[1] = Selected changes to the list of S&P 500 components
   const trueResult: WikipediaListData[] = tablesAsJson[0];
